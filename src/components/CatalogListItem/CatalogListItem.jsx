@@ -10,12 +10,22 @@ import {
   Year,
 } from './CatalogListItem.styled';
 
-const CatalogListItem = () => {
+const CatalogListItem = ({ car }) => {
+  console.log(car, 'ОДна машина');
+  const parts = car.address.split(', ');
+  const city = parts[1]; // "Kharkiv"
+  const country = parts[2];
+  const price = Number(car.rentalPrice.replace('$', ''));
+  const quality = price >= 30 ? 'Premium' : 'Econom';
   return (
     <CardWrap>
       <ImgWrapper
         style={{
-          backgroundImage: `url('https://ftp.goit.study/img/cars-test-task/volvo_xc90.jpeg')`,
+          backgroundImage: `url(${
+            car.img
+              ? car.img
+              : 'https://www.auto123.com/static/auto123/images/unknown.692d9ec5c563.png'
+          })`,
         }}
       >
         {/* <Img
@@ -25,34 +35,34 @@ const CatalogListItem = () => {
       </ImgWrapper>
       <FlexWrap>
         <Subtitle>
-          Marka <Year>Model</Year>, Year
+          {car.make} <Year>{car.model}</Year>, {car.year}
         </Subtitle>
-        <Subtitle>Price</Subtitle>
+        <p>{car.rentalPrice}</p>
       </FlexWrap>
       <List>
         <Item>
-          <p>City</p>
+          <p>{city}</p>
         </Item>
         <Item>
-          <p>Country</p>
+          <p>{country}</p>
         </Item>
         <Item>
-          <p>rentalCompany</p>
+          <p>{car.rentalCompany}</p>
         </Item>
         <Item>
-          <p>PREMIUM???</p>
+          <p>{quality}</p>
         </Item>
         <Item>
-          <p>Type</p>
+          <p>{car.type}</p>
         </Item>
         <Item>
-          <p>Make</p>
+          <p>{car.model}</p>
         </Item>
         <Item>
-          <p>ID</p>
+          <p>{car.id}</p>
         </Item>
         <Item>
-          <p>Щось не понятне</p>
+          <p>{car.accessories[0]}</p>
         </Item>
       </List>
 

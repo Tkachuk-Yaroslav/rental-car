@@ -26,12 +26,16 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 28px;
+  gap: 4px;
+  width: 270px;
+  height: 40px;
+  overflow: hidden;
 `;
 
-export const Item = styled.ul`
+export const Item = styled.li`
   font-size: 12px;
-  padding-left: 6px;
-  padding-right: 6px;
+  /* padding-left: 6px;
+  padding-right: 6px; */
   line-height: 150%;
   color: rgba(18, 20, 23, 0.5);
 `;
@@ -62,6 +66,10 @@ export const Subtitle = styled.p`
   font-style: normal;
   font-weight: 500;
   line-height: 24px; /* 150% */
+  overflow: hidden;
+  height: 24px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
 `;
 
 export const Year = styled.span`
