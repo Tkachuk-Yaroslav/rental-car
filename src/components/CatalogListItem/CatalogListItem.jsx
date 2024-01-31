@@ -78,7 +78,14 @@ const CatalogListItem = ({ car }) => {
           Learn more
         </BtnMore>
       </CardWrap>
-      <CarModal isOpen={isModalOpen} onClose={openModalToggle} car={car} />
+      <CarModal
+        isOpen={isModalOpen}
+        onClose={openModalToggle}
+        car={car}
+        city={city}
+        country={country}
+        quality={quality}
+      />
     </>
   );
 };
