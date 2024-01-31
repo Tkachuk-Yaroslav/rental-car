@@ -7,9 +7,11 @@ import {
   Item,
   List,
   Subtitle,
+  SvgHeart,
   Year,
 } from './CatalogListItem.styled';
 import CarModal from 'components/CarModal/CarModal';
+import sprite from '../../images/sprite.svg';
 
 const CatalogListItem = ({ car }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,12 +37,10 @@ const CatalogListItem = ({ car }) => {
                 : 'https://www.auto123.com/static/auto123/images/unknown.692d9ec5c563.png'
             })`,
           }}
-        >
-          {/* <Img
-          src="https://ftp.goit.study/img/cars-test-task/buick_enclave.jpeg"
-          alt="car"
-        /> */}
-        </ImgWrapper>
+        ></ImgWrapper>
+        <SvgHeart width={24} height={24}>
+          <use xlinkHref={`${sprite}#icon-heart`} />
+        </SvgHeart>
         <FlexWrap>
           <Subtitle>
             {car.make} <Year>{car.model}</Year>, {car.year}

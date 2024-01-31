@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 export const CardWrap = styled.div`
   width: 274px;
+  position: relative;
 `;
 
 export const Img = styled.img``;
@@ -74,4 +75,13 @@ export const Subtitle = styled.p`
 
 export const Year = styled.span`
   color: #3470ff;
+`;
+
+export const SvgHeart = styled.svg`
+  stroke: rgba(255, 255, 255, 0.8);
+  fill: transparent;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
 `;
