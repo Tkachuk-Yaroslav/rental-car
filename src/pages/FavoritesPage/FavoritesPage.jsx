@@ -1,4 +1,4 @@
-import FavoriteCard from '../../components/Test';
+import FavoriteCard from '../../components/FavoriteCard/FavoriteCard';
 import React from 'react';
 
 const FavoritesPage = () => {
