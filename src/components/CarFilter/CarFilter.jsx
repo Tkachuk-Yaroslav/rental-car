@@ -82,7 +82,9 @@ import {
 
 const CarFilter = () => {
   const [selectedMake, setSelectedMake] = useState('');
-  const [selectedPrice, setSelectedPrice] = useState(0);
+  const [selectedPrice, setSelectedPrice] = useState('');
+  const [fromMillage, setFromMillage] = useState('');
+  const [toMillage, setToMillage] = useState('');
 
   // Оновлюємо стан при зміні значення селекта
   const handleSelectChange = event => {
@@ -91,6 +93,14 @@ const CarFilter = () => {
 
   const handleSelectPriceChange = event => {
     setSelectedPrice(event.target.value);
+  };
+
+  const handleFromMillageChange = event => {
+    setFromMillage(event.target.value);
+  };
+
+  const handleToMillageChange = event => {
+    setToMillage(event.target.value);
   };
 
   return (
@@ -126,6 +136,7 @@ const CarFilter = () => {
           ))}
         </PriceSelect>
       </SelectPriceWrapper>
+
       <InputMillageWrapper>
         <label htmlFor="millage">Сar mileage / km</label>
         <DivMillage>
@@ -135,16 +146,21 @@ const CarFilter = () => {
               borderRight: '1px solid rgba(138, 138, 137, 0.20)',
             }}
             type="text"
+            value={fromMillage}
+            onChange={handleFromMillageChange}
             placeholder="From"
           />
           <InputMillage
             style={{ borderRadius: '0 14px 14px 0' }}
             type="text"
+            value={toMillage}
+            onChange={handleToMillageChange}
             placeholder="To"
           />
         </DivMillage>
       </InputMillageWrapper>
-      <Btn type="submit">Search</Btn>
+
+      <Btn type="button">Search</Btn>
     </CarForm>
   );
 };
