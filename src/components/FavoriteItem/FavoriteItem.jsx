@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   BtnMore,
   CardWrap,
@@ -15,39 +15,15 @@ import sprite from '../../images/sprite.svg';
 
 const FavoriteItem = ({ car, toggleFavorite }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
   const parts = car.address.split(', ');
   const city = parts[1]; // "Kharkiv"
   const country = parts[2];
   const price = Number(car.rentalPrice.replace('$', ''));
   const quality = price >= 30 ? 'Premium' : 'Econom';
 
-  //   useEffect(() => {
-  //     // Отримати дані про улюблені оголошення з localStorage при завантаженні
-  //     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  //     // Перевірити, чи поточне оголошення є серед улюблених
-  //     const isCarFavorite = favorites.some(item => item.id === car.id);
-  //     setIsFavorite(isCarFavorite);
-  //   }, [car.id]); // Запустити ефект лише при зміні ID автомобіля
-
   const openModalToggle = () => {
     setIsModalOpen(!isModalOpen);
   };
-
-  //   const toggleFavorite = () => {
-  //     setIsFavorite(!isFavorite);
-  //     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  //     if (!isFavorite) {
-  //       // Додати улюблений елемент
-  //       favorites.push(car);
-  //       localStorage.setItem('favorites', JSON.stringify(favorites));
-  //     } else {
-  //       // Видалити улюблений елемент
-  //       const updatedFavorites = favorites.filter(item => item.id !== car.id);
-  //       localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-  //     }
-  //     // Оновити дані у localStorage
-  //   };
 
   return (
     <>
@@ -64,9 +40,8 @@ const FavoriteItem = ({ car, toggleFavorite }) => {
         <SvgHeart
           width={24}
           height={24}
-          onClick={() => toggleFavorite(car.id, car.title)}
-          isFavorite={true}
-          // fill={isFavorite ? 'blue' : 'transparent'}
+          onClick={() => toggleFavorite(car.id)}
+          fill="blue"
         >
           <use xlinkHref={`${sprite}#icon-heart`} />
         </SvgHeart>
