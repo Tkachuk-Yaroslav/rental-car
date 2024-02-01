@@ -78,5 +78,5 @@ export const CarForm = styled.form`
   width: 859px;
   height: 74px;
 
-  margin: 0 auto;
+  margin: 0 auto 50px;
 `;
