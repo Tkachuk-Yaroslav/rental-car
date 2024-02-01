@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCars } from '../../redux/carsThunks';
 import CatalogList from 'components/CatalogList/CatalogList';
+import CarFilter from 'components/CarFilter/CarFilter';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const CatalogPage = () => {
   return (
     <>
       <div>Filter</div>
+      <CarFilter />
       <CatalogList />
     </>
   );
