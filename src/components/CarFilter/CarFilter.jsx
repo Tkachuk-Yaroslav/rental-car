@@ -74,6 +74,7 @@ import {
   DivMillage,
   InputMillage,
   InputMillageWrapper,
+  PriceSelect,
   SelectCarWrapper,
   SelectPriceWrapper,
   StyledSelect,
@@ -112,7 +113,7 @@ const CarFilter = () => {
 
       <SelectPriceWrapper>
         <label htmlFor="priceSelect">Price To $/ 1 hour</label>
-        <select
+        <PriceSelect
           id="priceSelect"
           value={selectedPrice}
           onChange={handleSelectPriceChange}
@@ -123,7 +124,7 @@ const CarFilter = () => {
               {price}
             </option>
           ))}
-        </select>
+        </PriceSelect>
       </SelectPriceWrapper>
       <InputMillageWrapper>
         <label htmlFor="millage">Сar mileage / km</label>

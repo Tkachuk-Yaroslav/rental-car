@@ -7,12 +7,30 @@ export const SelectCarWrapper = styled.div`
 
 export const StyledSelect = styled.select`
   width: 100%;
-  height: 40px;
+  height: 48px;
+  border-radius: 14px;
+  border: none;
+  background: #f7f7fb;
+
+  padding: 14px 18px;
+  margin-top: 8px;
 
   option {
     max-height: 200px;
     overflow-y: auto;
   }
+`;
+
+export const PriceSelect = styled.select`
+  width: 100%;
+
+  height: 48px;
+  border-radius: 14px;
+  border: none;
+  background: #f7f7fb;
+
+  padding: 14px 18px;
+  margin-top: 8px;
 `;
 //125 48
 export const SelectPriceWrapper = styled.div`
