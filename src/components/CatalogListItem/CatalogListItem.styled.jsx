@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 export const CardWrap = styled.div`
   width: 274px;
   position: relative;
@@ -79,9 +79,15 @@ export const Year = styled.span`
 
 export const SvgHeart = styled.svg`
   stroke: rgba(255, 255, 255, 0.8);
-  fill: transparent;
+  /* fill: transparent; */
   position: absolute;
   top: 14px;
   right: 14px;
   cursor: pointer;
+
+  ${({ isFavorite }) =>
+    isFavorite &&
+    css`
+      fill: blue; // Змінюємо колір, якщо елемент має клас 'favorite'
+    `}
 `;
