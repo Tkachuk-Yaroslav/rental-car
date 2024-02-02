@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FavoriteItem from 'components/FavoriteItem/FavoriteItem';
+import { ListOfCars } from 'components/CatalogList/CatalogList.styled';
+import { HaveNotFav } from './FavoritesCard.styled';
 
 const FavoriteCard = () => {
   const [favorites, setFavorites] = useState([]);
@@ -19,17 +21,21 @@ const FavoriteCard = () => {
   };
 
   return (
-    <>
-      {favorites.map(car => {
-        return (
-          <FavoriteItem
-            car={car}
-            toggleFavorite={toggleFavorite}
-            key={car.id}
-          />
-        );
-      })}
-    </>
+    <ListOfCars>
+      {favorites.length > 0 ? (
+        favorites.map(car => {
+          return (
+            <FavoriteItem
+              car={car}
+              toggleFavorite={toggleFavorite}
+              key={car.id}
+            />
+          );
+        })
+      ) : (
+        <HaveNotFav>You don't have any favorite cars yet!</HaveNotFav>
+      )}
+    </ListOfCars>
   );
 };
 

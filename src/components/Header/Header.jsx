@@ -3,7 +3,7 @@ import sprite from '../../images/sprite.svg';
 
 export const Header = () => {
   return (
-    <header>
+    <header style={{ marginBottom: '20px' }}>
       <nav>
         <HeaderList>
           <ListItem>

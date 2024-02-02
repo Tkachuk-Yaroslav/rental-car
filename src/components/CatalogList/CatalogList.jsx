@@ -1,7 +1,7 @@
 import CatalogListItem from 'components/CatalogListItem/CatalogListItem';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { ListOfCars } from './CatalogList.styled';
+import { HaveNotCars, ListOfCars } from './CatalogList.styled';
 
 const CatalogList = () => {
   const cars = useSelector(state => state.cars.entities);
@@ -12,7 +12,7 @@ const CatalogList = () => {
           return <CatalogListItem key={car.id} car={car} />;
         })
       ) : (
-        <p>НЕМА</p>
+        <HaveNotCars>Sorry, we don't have any cars like this!</HaveNotCars>
       )}
     </ListOfCars>
   );
