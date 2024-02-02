@@ -1,8 +1,10 @@
+import { FooterWrap } from './Footer.styled';
+
 const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2024 Оренда автомобілів в Україні</p>
-    </footer>
+    <FooterWrap>
+      <p>&copy; 2024 Car rental in Ukraine №1</p>
+    </FooterWrap>
   );
 };
 

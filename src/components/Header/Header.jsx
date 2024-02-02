@@ -1,9 +1,16 @@
-import { HeaderList, ListItem, StyledLink, SvgHeader } from './Header.steled';
+import {
+  HeaderList,
+  HeaderWrap,
+  ListItem,
+  StyledLink,
+  SvgHeader,
+} from './Header.steled';
 import sprite from '../../images/sprite.svg';
+import { RentalLink } from 'components/CarModal/CarModal.styled';
 
 export const Header = () => {
   return (
-    <header style={{ marginBottom: '20px' }}>
+    <HeaderWrap>
       <nav>
         <HeaderList>
           <ListItem>
@@ -32,6 +39,18 @@ export const Header = () => {
           </ListItem>
         </HeaderList>
       </nav>
-    </header>
+      <div>
+        <RentalLink
+          href="tel:+380730000000"
+          type="button"
+          style={{ marginRight: '20px' }}
+        >
+          Phone
+        </RentalLink>
+        <RentalLink href="mailto:example@gmail.com" type="button">
+          Gmail
+        </RentalLink>
+      </div>
+    </HeaderWrap>
   );
 };

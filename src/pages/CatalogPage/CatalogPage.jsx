@@ -40,7 +40,6 @@ const CatalogPage = () => {
           />
         </CenteredColorRing>
       )}
-      <div>Filter</div>
       <CarFilter />
       <CatalogList />
     </>
