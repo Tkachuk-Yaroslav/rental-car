@@ -13,12 +13,26 @@ const CatalogPage = () => {
   const dispatch = useDispatch();
   const cars = useSelector(state => state.cars.entities);
   const isLoading = useSelector(state => state.cars.isLoading);
+  const [page, setPage] = useState(1);
   const [filterOptions, setFilterOptions] = useState({
     make: '',
     rentalPrice: '',
     mileageFrom: '',
     mileageTo: '',
+    page,
+    pageSize: 10,
   });
+
+  const incrementPage = () => {
+    setPage(prevPage => {
+      const nextPage = prevPage + 1;
+      setFilterOptions(prevOptions => ({
+        ...prevOptions,
+        page: nextPage,
+      }));
+      return nextPage;
+    });
+  };
 
   const handleFilterOptionsChange = updatedOptions => {
     setFilterOptions(prevOptions => ({
@@ -63,7 +77,7 @@ const CatalogPage = () => {
         </CenteredColorRing>
       )}
       <CarFilter filterSubmit={handleFilterOptionsChange} />
-      <CatalogList />
+      <CatalogList incrementPage={incrementPage} />
     </>
   );
 };

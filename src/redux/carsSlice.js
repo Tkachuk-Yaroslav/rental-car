@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars } from './carsThunks';
+import { fetchCars, filterCars } from './carsThunks';
 
 const initialState = {
   entities: [
@@ -34,12 +34,25 @@ export const carsSlice = createSlice({
       .addCase(fetchCars.pending, state => {
         state.isLoading = true;
       })
+      .addCase(filterCars.fulfilled, (state, action) => {
+        state.entities = action.payload.cars;
+        state.totalCount = action.payload.totalCount;
+      })
+      // .addCase(fetchCars.fulfilled, (state, action) => {
+      //   state.isLoading = false;
+      //   // state.entities.push(action.payload);
+      //   // state.entities = action.payload;
+      //   state.entities.push(...action.payload.cars);
+      //   // state.entities = action.payload.cars;
+      //   state.totalCount = action.payload.totalCount;
+      // })
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
-        // state.entities.push(action.payload);
-        state.entities = action.payload;
-        // state.entities = action.payload.cars;
-        // state.totalCount = action.payload.totalCount;
+        const newCars = action.payload.cars.filter(
+          car => !state.entities.find(existingCar => existingCar.id === car.id)
+        );
+        state.entities.push(...newCars); // Додаємо нові автомобілі, які відсутні в стейті
+        state.totalCount = action.payload.totalCount;
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;

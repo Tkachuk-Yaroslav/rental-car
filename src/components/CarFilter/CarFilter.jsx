@@ -79,8 +79,11 @@ import {
   SelectPriceWrapper,
   StyledSelect,
 } from './CarFilter.styled';
+import { useDispatch } from 'react-redux';
+import { filterCars } from '../../redux/carsThunks';
 
 const CarFilter = ({ filterSubmit }) => {
+  const dispatch = useDispatch();
   const [selectedMake, setSelectedMake] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
   const [fromMillage, setFromMillage] = useState('');
@@ -113,7 +116,8 @@ const CarFilter = ({ filterSubmit }) => {
       mileageTo: toMillage,
     };
 
-    filterSubmit(options);
+    // filterSubmit(options);
+    dispatch(filterCars(options));
   };
 
   const handleReset = () => {
