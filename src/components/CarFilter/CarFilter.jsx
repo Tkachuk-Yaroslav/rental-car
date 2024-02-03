@@ -116,6 +116,21 @@ const CarFilter = ({ filterSubmit }) => {
     filterSubmit(options);
   };
 
+  const handleReset = () => {
+    setSelectedMake('');
+    setSelectedPrice('');
+    setFromMillage('');
+    setToMillage('');
+    const options = {
+      make: '',
+      rentalPrice: '',
+      mileageFrom: '',
+      mileageTo: '',
+    };
+
+    filterSubmit(options);
+  };
+
   return (
     <CarForm onSubmit={handleSubmit}>
       <SelectCarWrapper>
@@ -174,6 +189,9 @@ const CarFilter = ({ filterSubmit }) => {
       </InputMillageWrapper>
 
       <Btn type="submit">Search</Btn>
+      <Btn type="button" onClick={handleReset}>
+        Reset
+      </Btn>
     </CarForm>
   );
 };
