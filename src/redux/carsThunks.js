@@ -24,3 +24,15 @@ export const filterCars = createAsyncThunk(
     }
   }
 );
+
+export const resetCars = createAsyncThunk(
+  'cars/resetCars',
+  async (data, thunkAPI) => {
+    try {
+      const response = await getCars(data);
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

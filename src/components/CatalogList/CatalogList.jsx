@@ -3,7 +3,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { HaveNotCars, ListOfCars } from './CatalogList.styled';
 
-const CatalogList = ({ incrementPage }) => {
+const PAGE_SIZE = 12;
+
+const CatalogList = ({ incrementPage, page }) => {
+  const isHideBtn = useSelector(state => state.cars.hideButton);
+  const totalCount = useSelector(state => state.cars.totalCount);
+
+  const maxPage = Math.ceil(totalCount / PAGE_SIZE);
+
   const handleLoadMore = () => {
     incrementPage(); // Збільшуємо сторінку
   };
@@ -17,9 +24,11 @@ const CatalogList = ({ incrementPage }) => {
       ) : (
         <HaveNotCars>Sorry, we don't have any cars like this!</HaveNotCars>
       )}
-      <button type="button" onClick={handleLoadMore}>
-        Load More
-      </button>
+      {!isHideBtn && page < maxPage && (
+        <button type="button" onClick={handleLoadMore}>
+          Load More
+        </button>
+      )}
     </ListOfCars>
   );
 };

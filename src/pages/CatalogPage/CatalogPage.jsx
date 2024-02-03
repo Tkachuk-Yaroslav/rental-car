@@ -20,8 +20,12 @@ const CatalogPage = () => {
     mileageFrom: '',
     mileageTo: '',
     page,
-    pageSize: 10,
+    pageSize: 12,
   });
+
+  const resetPage = () => {
+    setPage(1);
+  };
 
   const incrementPage = () => {
     setPage(prevPage => {
@@ -76,8 +80,11 @@ const CatalogPage = () => {
           />
         </CenteredColorRing>
       )}
-      <CarFilter filterSubmit={handleFilterOptionsChange} />
-      <CatalogList incrementPage={incrementPage} />
+      <CarFilter
+        filterSubmit={handleFilterOptionsChange}
+        resetPage={resetPage}
+      />
+      <CatalogList incrementPage={incrementPage} page={page} />
     </>
   );
 };

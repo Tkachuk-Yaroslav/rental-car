@@ -122,9 +122,9 @@ export const getFilterCars = async data => {
     });
 
     // Визначення індексу початку та кінця для сторінки
-    const startIndex = (data.page - 1) * data.pageSize;
-    const endIndex = startIndex + data.pageSize;
-    const carsForPage = filteredCars.slice(startIndex, endIndex);
+    // const startIndex = (data.page - 1) * data.pageSize;
+    // const endIndex = startIndex + data.pageSize;
+    // const carsForPage = filteredCars.slice(startIndex, endIndex);
     // return carsForPage;
     return {
       // cars: filteredCars,

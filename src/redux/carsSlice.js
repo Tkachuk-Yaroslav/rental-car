@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars, filterCars } from './carsThunks';
+import { fetchCars, filterCars, resetCars } from './carsThunks';
 
 const initialState = {
   entities: [
@@ -24,6 +24,7 @@ const initialState = {
   ],
   totalCount: '',
   isLoading: false,
+  hideButton: false,
   error: null,
 };
 export const carsSlice = createSlice({
@@ -37,6 +38,7 @@ export const carsSlice = createSlice({
       .addCase(filterCars.fulfilled, (state, action) => {
         state.entities = action.payload.cars;
         state.totalCount = action.payload.totalCount;
+        state.hideButton = true;
       })
       // .addCase(fetchCars.fulfilled, (state, action) => {
       //   state.isLoading = false;
@@ -53,24 +55,32 @@ export const carsSlice = createSlice({
         );
         state.entities.push(...newCars); // Додаємо нові автомобілі, які відсутні в стейті
         state.totalCount = action.payload.totalCount;
+        state.hideButton = false;
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload.message;
+      })
+      .addCase(resetCars.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.entities = action.payload.cars;
+        state.totalCount = action.payload.totalCount;
+
+        state.hideButton = false;
       });
+    // {
+    //   [fetchCars.pending]: (state, action) => {
+    //     state.isLoading = true;
+    //   },
+    //   [fetchCars.fulfilled]: (state, action) => {
+    //     state.entities.push(action.payload);
+    //     state.isLoading = false;
+    //   },
+    //   [fetchCars.rejected]: (state, action) => {
+    //     state.isLoading = false;
+    //   },
+    // },
   },
-  // {
-  //   [fetchCars.pending]: (state, action) => {
-  //     state.isLoading = true;
-  //   },
-  //   [fetchCars.fulfilled]: (state, action) => {
-  //     state.entities.push(action.payload);
-  //     state.isLoading = false;
-  //   },
-  //   [fetchCars.rejected]: (state, action) => {
-  //     state.isLoading = false;
-  //   },
-  // },
 });
 
 // export const { fetchCars } = carsSlice.actions;
