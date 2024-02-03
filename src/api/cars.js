@@ -49,16 +49,42 @@ export const getAllCars = async data => {
 
 // axios.defaults.baseURL = 'https://65b990b1b71048505a8af271.mockapi.io/';
 
-// export const getAllCars = async (page = 1, pageSize = 12) => {
+// export const getAllCars = async (data, page = 1, pageSize = 10) => {
 //   try {
-//     const res = await axios.get('cars', {
-//       params: {
-//         page: page,
-//         limit: pageSize,
-//       },
+//     const res = await axios.get('cars');
+
+//     // Фільтрація за маркою авто, вартістю оренди, діапазоном пройдених миль
+//     let filteredCars = res.data.filter(car => {
+//       let includeCar = true;
+//       if (data.make && car.make !== data.make) {
+//         includeCar = false;
+//       }
+//       if (
+//         data.rentalPrice &&
+//         parseInt(car.rentalPrice.replace('$', ''), 10) >
+//           parseInt(data.rentalPrice, 10)
+//       ) {
+//         includeCar = false;
+//       }
+//       if (
+//         data.mileageFrom &&
+//         data.mileageTo &&
+//         (car.mileage < data.mileageFrom || car.mileage > data.mileageTo)
+//       ) {
+//         includeCar = false;
+//       }
+//       return includeCar;
 //     });
-//     console.log(res.data, 'CARS.JS ');
-//     return res.data;
+
+//     // Визначення індексу початку та кінця для сторінки
+//     const startIndex = (page - 1) * pageSize;
+//     const endIndex = startIndex + pageSize;
+//     const carsForPage = filteredCars.slice(startIndex, endIndex);
+//     return carsForPage;
+//     // return {
+//     //   cars: carsForPage,
+//     //   totalCount: filteredCars.length,
+//     // };
 //   } catch (error) {
 //     console.error('Error fetching cars:', error);
 //     throw error;

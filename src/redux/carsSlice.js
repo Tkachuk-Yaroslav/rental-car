@@ -22,6 +22,7 @@ const initialState = {
     //   mileage: 0,
     // },
   ],
+  totalCount: '',
   isLoading: false,
   error: null,
 };
@@ -37,6 +38,8 @@ export const carsSlice = createSlice({
         state.isLoading = false;
         // state.entities.push(action.payload);
         state.entities = action.payload;
+        // state.entities = action.payload.cars;
+        // state.totalCount = action.payload.totalCount;
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;
