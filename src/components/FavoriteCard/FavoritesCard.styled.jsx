@@ -12,3 +12,18 @@ export const HaveNotFav = styled.div`
   font-weight: 600;
   line-height: 20px;
 `;
+export const Btn = styled.button`
+  color: #ffffff;
+  /* font-family: Manrope; */
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+
+  margin: 0 auto;
+  padding: 14px 44px;
+  width: 160px;
+  height: 48px;
+
+  border-radius: 12px;
+  background: #3470ff;
+`;
