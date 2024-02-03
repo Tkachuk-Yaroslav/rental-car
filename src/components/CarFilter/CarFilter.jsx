@@ -80,7 +80,7 @@ import {
   StyledSelect,
 } from './CarFilter.styled';
 
-const CarFilter = () => {
+const CarFilter = ({ filterSubmit }) => {
   const [selectedMake, setSelectedMake] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
   const [fromMillage, setFromMillage] = useState('');
@@ -103,8 +103,21 @@ const CarFilter = () => {
     setToMillage(event.target.value);
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const options = {
+      make: selectedMake,
+      rentalPrice: selectedPrice,
+      mileageFrom: fromMillage,
+      mileageTo: toMillage,
+    };
+
+    filterSubmit(options);
+  };
+
   return (
-    <CarForm>
+    <CarForm onSubmit={handleSubmit}>
       <SelectCarWrapper>
         <label htmlFor="makeSelect">Car brand</label>
         <StyledSelect
@@ -160,7 +173,7 @@ const CarFilter = () => {
         </DivMillage>
       </InputMillageWrapper>
 
-      <Btn type="button">Search</Btn>
+      <Btn type="submit">Search</Btn>
     </CarForm>
   );
 };
