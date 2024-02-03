@@ -10,6 +10,7 @@ export const ImgWrapper = styled.div`
   width: 274px;
   height: 268px;
   overflow: hidden;
+  background-color: gray;
   background-repeat: no-repeat;
   background-position: center; /* Розміщення зображення по центру */
   background-size: cover;
