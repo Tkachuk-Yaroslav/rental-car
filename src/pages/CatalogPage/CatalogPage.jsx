@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCars } from '../../redux/carsThunks';
+import { fetchCars, resetCars } from '../../redux/carsThunks';
 import CatalogList from 'components/CatalogList/CatalogList';
 import CarFilter from 'components/CarFilter/CarFilter';
 import { ColorRing } from 'react-loader-spinner';
@@ -44,6 +44,11 @@ const CatalogPage = () => {
       ...updatedOptions,
     }));
   };
+
+  useEffect(() => {
+    dispatch(resetCars(filterOptions));
+    // eslint-disable-next-line
+  }, []);
 
   //   const [cars, setCars] = useState([]);
   useEffect(() => {

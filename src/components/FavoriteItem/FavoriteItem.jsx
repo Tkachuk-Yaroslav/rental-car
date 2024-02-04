@@ -52,30 +52,14 @@ const FavoriteItem = ({ car, toggleFavorite }) => {
           <p>{car.rentalPrice}</p>
         </FlexWrap>
         <List>
-          <Item>
-            <p>{city}</p>
-          </Item>
-          <Item>
-            <p>{country}</p>
-          </Item>
-          <Item>
-            <p>{car.rentalCompany}</p>
-          </Item>
-          <Item>
-            <p>{quality}</p>
-          </Item>
-          <Item>
-            <p>{car.type}</p>
-          </Item>
-          <Item>
-            <p>{car.model}</p>
-          </Item>
-          <Item>
-            <p>{car.id}</p>
-          </Item>
-          <Item>
-            <p>{car.accessories[0]}</p>
-          </Item>
+          <Item>{city}</Item>
+          <Item>{country}</Item>
+          <Item>{car.rentalCompany}</Item>
+          <Item>{quality}</Item>
+          <Item>{car.type}</Item>
+          <Item>{car.model}</Item>
+          <Item>{car.id}</Item>
+          <Item>{car.accessories[0]}</Item>
         </List>
 
         <BtnMore type="button" onClick={openModalToggle}>

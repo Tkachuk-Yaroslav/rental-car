@@ -2,6 +2,7 @@ import CatalogListItem from 'components/CatalogListItem/CatalogListItem';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { HaveNotCars, ListOfCars } from './CatalogList.styled';
+import { Btn } from 'components/FavoriteCard/FavoritesCard.styled';
 
 const PAGE_SIZE = 12;
 
@@ -25,9 +26,9 @@ const CatalogList = ({ incrementPage, page }) => {
         <HaveNotCars>Sorry, we don't have any cars like this!</HaveNotCars>
       )}
       {!isHideBtn && page < maxPage && (
-        <button type="button" onClick={handleLoadMore}>
+        <Btn type="button" onClick={handleLoadMore}>
           Load More
-        </button>
+        </Btn>
       )}
     </ListOfCars>
   );
