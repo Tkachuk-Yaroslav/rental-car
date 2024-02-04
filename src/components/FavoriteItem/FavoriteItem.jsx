@@ -16,7 +16,7 @@ import sprite from '../../images/sprite.svg';
 const FavoriteItem = ({ car, toggleFavorite }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const parts = car.address.split(', ');
-  const city = parts[1]; // "Kharkiv"
+  const city = parts[1];
   const country = parts[2];
   const price = Number(car.rentalPrice.replace('$', ''));
   const quality = price >= 30 ? 'Premium' : 'Econom';

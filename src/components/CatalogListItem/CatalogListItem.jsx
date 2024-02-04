@@ -17,7 +17,7 @@ const CatalogListItem = ({ car }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const parts = car.address.split(', ');
-  const city = parts[1]; // "Kharkiv"
+  const city = parts[1];
   const country = parts[2];
   const price = Number(car.rentalPrice.replace('$', ''));
   const quality = price >= 30 ? 'Premium' : 'Econom';

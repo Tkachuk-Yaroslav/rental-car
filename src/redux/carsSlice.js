@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCars, filterCars, resetCars } from './carsThunks';
+import {
+  handleCarsFulfilled,
+  handleFilterFulfilled,
+  handlePending,
+  handleRejected,
+  handleResetFulfilled,
+} from './helpers';
 
 const initialState = {
   entities: [],
@@ -13,34 +20,12 @@ export const carsSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(fetchCars.pending, state => {
-        state.isLoading = true;
-      })
-      .addCase(filterCars.fulfilled, (state, action) => {
-        state.entities = action.payload.cars;
-        state.totalCount = action.payload.totalCount;
-        state.hideButton = true;
-      })
-      .addCase(fetchCars.fulfilled, (state, action) => {
-        state.isLoading = false;
-        const newCars = action.payload.cars.filter(
-          car => !state.entities.find(existingCar => existingCar.id === car.id)
-        );
-        state.entities.push(...newCars);
-        state.totalCount = action.payload.totalCount;
-        state.hideButton = false;
-      })
-      .addCase(fetchCars.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload.message;
-      })
-      .addCase(resetCars.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.entities = action.payload.cars;
-        state.totalCount = action.payload.totalCount;
+      .addCase(filterCars.fulfilled, handleFilterFulfilled)
+      .addCase(fetchCars.fulfilled, handleCarsFulfilled)
+      .addCase(resetCars.fulfilled, handleResetFulfilled)
 
-        state.hideButton = false;
-      });
+      .addMatcher(action => action.type.endsWith('/pending'), handlePending)
+      .addMatcher(action => action.type.endsWith('/rejected'), handleRejected);
   },
 });
 
