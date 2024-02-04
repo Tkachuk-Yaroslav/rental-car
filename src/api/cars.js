@@ -41,7 +41,8 @@ export const getFilterCars = async data => {
       if (
         data.mileageFrom &&
         data.mileageTo &&
-        (car.mileage < data.mileageFrom || car.mileage > data.mileageTo)
+        (car.mileage < parseInt(data.mileageFrom.replace(',', ''), 10) ||
+          car.mileage > parseInt(data.mileageTo.replace(',', ''), 10))
       ) {
         includeCar = false;
       }

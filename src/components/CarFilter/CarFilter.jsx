@@ -23,7 +23,10 @@ const CarFilter = ({ resetPage }) => {
   const [fromMillage, setFromMillage] = useState('');
   const [toMillage, setToMillage] = useState('');
 
-  // Оновлюємо стан при зміні значення селекта
+  const formatNumber = num => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
   const handleSelectChange = event => {
     setSelectedMake(event.target.value);
   };
@@ -33,11 +36,11 @@ const CarFilter = ({ resetPage }) => {
   };
 
   const handleFromMillageChange = event => {
-    setFromMillage(event.target.value);
+    setFromMillage(formatNumber(event.target.value.replace(/\D/g, '')));
   };
 
   const handleToMillageChange = event => {
-    setToMillage(event.target.value);
+    setToMillage(formatNumber(event.target.value.replace(/\D/g, '')));
   };
 
   const handleSubmit = event => {
