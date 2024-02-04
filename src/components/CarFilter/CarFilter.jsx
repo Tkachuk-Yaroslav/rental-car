@@ -7,6 +7,7 @@ import {
   DivMillage,
   InputMillage,
   InputMillageWrapper,
+  InputText,
   Label,
   PriceSelect,
   SelectCarWrapper,
@@ -116,19 +117,20 @@ const CarFilter = ({ resetPage }) => {
             style={{
               borderRadius: '14px 0px 0px 14px',
               borderRight: '1px solid rgba(138, 138, 137, 0.20)',
+              paddingLeft: '68px',
             }}
             type="text"
             value={fromMillage}
             onChange={handleFromMillageChange}
-            placeholder="From"
           />
+          <InputText style={{ left: '24px' }}>From</InputText>
           <InputMillage
-            style={{ borderRadius: '0 14px 14px 0' }}
+            style={{ borderRadius: '0 14px 14px 0', paddingLeft: '48px' }}
             type="text"
             value={toMillage}
             onChange={handleToMillageChange}
-            placeholder="To"
           />
+          <InputText style={{ right: '120px' }}>To</InputText>
         </DivMillage>
       </InputMillageWrapper>
 

@@ -65,8 +65,14 @@ export const InputMillage = styled.input`
   background: #f7f7fb;
   border: transparent;
 `;
+export const InputText = styled.p`
+  position: absolute;
+  top: 14px;
+`;
 
 export const DivMillage = styled.div`
+  position: relative;
+
   margin-top: 8px;
 `;
 
