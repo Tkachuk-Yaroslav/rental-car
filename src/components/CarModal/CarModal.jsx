@@ -92,14 +92,22 @@ const CarModal = ({ isOpen, onClose, car, city, country, quality }) => {
           <Description>{car.description}</Description>
           <Text>Accessories and functionalities:</Text>
           <Accessories>
-            <Item>{car.accessories[0]}</Item>
-            <Item>{car.accessories[1]}</Item>
-            <Item>{car.accessories[2]}</Item>
+            {car.accessories.length > 0 ? (
+              car.accessories.map((item, index) => (
+                <Item key={index}>{item}</Item>
+              ))
+            ) : (
+              <Item>No accessories are available</Item>
+            )}
           </Accessories>
           <Functionalities>
-            <Item>{car.functionalities[0]}</Item>
-            <Item>{car.functionalities[1]}</Item>
-            <Item>{car.functionalities[2]}</Item>
+            {car.functionalities.length > 0 ? (
+              car.functionalities.map((item, index) => (
+                <Item key={index}>{item}</Item>
+              ))
+            ) : (
+              <Item>No functionalities are available</Item>
+            )}
           </Functionalities>
           <Text>Rental Conditions:</Text>
           <ConditionsWrap>

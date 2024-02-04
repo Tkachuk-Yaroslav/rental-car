@@ -90,14 +90,30 @@ export const Item = styled.li`
 
 export const Description = styled.p`
   color: #121417;
-
-  /* font-family: Manrope; */
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
   margin-bottom: 24px;
   height: 40px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 
 export const Text = styled.div`
