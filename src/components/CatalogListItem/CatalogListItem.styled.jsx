@@ -12,7 +12,7 @@ export const ImgWrapper = styled.div`
   overflow: hidden;
   background-color: gray;
   background-repeat: no-repeat;
-  background-position: center; /* Розміщення зображення по центру */
+  background-position: center;
   background-size: cover;
   border-radius: 14px;
   margin-bottom: 14px;
@@ -37,8 +37,6 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   font-size: 12px;
-  /* padding-left: 6px;
-  padding-right: 6px; */
   line-height: 1.5;
   color: rgba(18, 20, 23, 0.5);
 
@@ -66,7 +64,7 @@ export const BtnMore = styled.button`
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
 `;
 
 export const Subtitle = styled.p`
@@ -76,7 +74,7 @@ export const Subtitle = styled.p`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
   overflow: hidden;
   height: 24px;
   text-overflow: ellipsis;
@@ -89,7 +87,6 @@ export const Year = styled.span`
 
 export const SvgHeart = styled.svg`
   stroke: rgba(255, 255, 255, 0.8);
-  /* fill: transparent; */
   position: absolute;
   top: 14px;
   right: 14px;
@@ -98,6 +95,6 @@ export const SvgHeart = styled.svg`
   ${({ isFavorite }) =>
     isFavorite &&
     css`
-      fill: blue; // Змінюємо колір, якщо елемент має клас 'favorite'
+      fill: blue;
     `}
 `;

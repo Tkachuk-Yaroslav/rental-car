@@ -13,7 +13,7 @@ const CatalogList = ({ incrementPage, page }) => {
   const maxPage = Math.ceil(totalCount / PAGE_SIZE);
 
   const handleLoadMore = () => {
-    incrementPage(); // Збільшуємо сторінку
+    incrementPage();
   };
   const cars = useSelector(state => state.cars.entities);
   return (

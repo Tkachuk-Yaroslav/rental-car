@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-export const H1 = styled.h1`
-  /* margin: 0 auto 24px;
-  width: 600px;
-  padding: 24px; */
-`;
+export const H1 = styled.h1``;
 
 export const H2 = styled.h2`
   padding: 14px;
@@ -32,7 +28,7 @@ export const TitleWrap = styled.div`
   width: 1184px;
   height: 500px;
   background-image: url(https://bmwlviv.com/storage/units/big/p90295453-highres.jpg);
-  background-repeat: no-repeat; /* Не повторювати картинку */
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 `;

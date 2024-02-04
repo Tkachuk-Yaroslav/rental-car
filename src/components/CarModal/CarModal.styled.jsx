@@ -6,7 +6,7 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* сірий оверлей */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +14,8 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  position: relative; /* Додано */
-  background-color: #fff; /* колір фону модального вікна */
+  position: relative;
+  background-color: #fff;
   padding: 40px;
   border-radius: 24px;
   width: 541px;
@@ -76,8 +76,6 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   font-size: 12px;
-  /* padding-left: 6px;
-  padding-right: 6px; */
   line-height: 150%;
   color: rgba(18, 20, 23, 0.5);
 

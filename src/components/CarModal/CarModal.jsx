@@ -22,15 +22,13 @@ import {
 const CarModal = ({ isOpen, onClose, car, city, country, quality }) => {
   console.log(car, 'МОДАЛКА');
 
-  // Розділити рядок на три частини за символом \n
   const conditionsArray = car.rentalConditions.split('\n');
 
-  // Зберегти кожну частину в окрему змінну
-  const minimumAgeString = conditionsArray[0]; // "Minimum age: 21"
+  const minimumAgeString = conditionsArray[0];
   const minimumAgeArray = minimumAgeString.split(': ');
   const minimumAge = parseInt(minimumAgeArray[1], 10);
 
-  const validLicense = conditionsArray[1]; // "Valid driver's license"
+  const validLicense = conditionsArray[1];
   const thirdRentalConditions = conditionsArray[2];
 
   const formattedMileage = car.mileage.toLocaleString('en-US');
@@ -127,4 +125,3 @@ const CarModal = ({ isOpen, onClose, car, city, country, quality }) => {
 };
 
 export default CarModal;
-// 460 248

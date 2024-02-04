@@ -32,7 +32,7 @@ export const PriceSelect = styled.select`
   padding: 14px 18px;
   margin-top: 8px;
 `;
-//125 48
+
 export const SelectPriceWrapper = styled.div`
   width: 125px;
   height: 74px;

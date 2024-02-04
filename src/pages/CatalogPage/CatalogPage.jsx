@@ -1,6 +1,3 @@
-// import { getAllCars } from 'api/cars';
-// import React, { useEffect, useState } from 'react';
-
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCars, resetCars } from '../../redux/carsThunks';
@@ -38,37 +35,15 @@ const CatalogPage = () => {
     });
   };
 
-  const handleFilterOptionsChange = updatedOptions => {
-    setFilterOptions(prevOptions => ({
-      ...prevOptions,
-      ...updatedOptions,
-    }));
-  };
-
   useEffect(() => {
     dispatch(resetCars(filterOptions));
     // eslint-disable-next-line
   }, []);
 
-  //   const [cars, setCars] = useState([]);
   useEffect(() => {
-    dispatch(
-      fetchCars(filterOptions)
-      // {
-      //   make: 'Kia',
-      //   rentalPrice: '',
-      //   mileageFrom: '',
-      //   mileageTo: '',
-      // }
-    );
-    //     const fetchData = async () => {
-    //       const data = await getAllCars();
-    //       console.log(data, 'те що буде діспачиться');
-    //       setCars(data);
-    //     };
-    //     fetchData();
+    dispatch(fetchCars(filterOptions));
   }, [dispatch, filterOptions]);
-  //   console.log(cars, 'МІЙ МАСИВ В СТЕЙТІ');
+
   console.log(cars, 'масив який буде мапатись');
   return (
     <>
@@ -85,10 +60,7 @@ const CatalogPage = () => {
           />
         </CenteredColorRing>
       )}
-      <CarFilter
-        filterSubmit={handleFilterOptionsChange}
-        resetPage={resetPage}
-      />
+      <CarFilter resetPage={resetPage} />
       <CatalogList incrementPage={incrementPage} page={page} />
     </>
   );
