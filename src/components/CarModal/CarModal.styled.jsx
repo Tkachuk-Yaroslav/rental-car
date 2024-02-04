@@ -69,7 +69,7 @@ export const List = styled.ul`
   flex-wrap: wrap;
   margin-bottom: 14px;
   gap: 4px;
-  width: 270px;
+  width: 350px;
   height: 40px;
   overflow: hidden;
 `;
@@ -80,6 +80,14 @@ export const Item = styled.li`
   padding-right: 6px; */
   line-height: 150%;
   color: rgba(18, 20, 23, 0.5);
+
+  &:not(:first-child)::before {
+    content: '|';
+    margin-right: 6px;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
 `;
 
 export const Description = styled.p`

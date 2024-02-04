@@ -28,18 +28,27 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 28px;
-  gap: 4px;
-  width: 270px;
-  height: 40px;
+  gap: 4px 6px;
+  max-width: 270px;
+  max-height: 40px;
   overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const Item = styled.li`
   font-size: 12px;
   /* padding-left: 6px;
   padding-right: 6px; */
-  line-height: 150%;
+  line-height: 1.5;
   color: rgba(18, 20, 23, 0.5);
+
+  &:not(:first-child)::before {
+    content: '|';
+    margin-right: 6px;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
 `;
 
 export const BtnMore = styled.button`

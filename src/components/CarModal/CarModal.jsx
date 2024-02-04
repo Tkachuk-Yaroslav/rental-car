@@ -83,51 +83,25 @@ const CarModal = ({ isOpen, onClose, car, city, country, quality }) => {
             </Subtitle>
           </FlexWrap>
           <List>
-            <Item>
-              <p>{city}</p>
-            </Item>
-            <Item>
-              <p>{country}</p>
-            </Item>
-            <Item>
-              <p>Id:{car.id}</p>
-            </Item>
-            <Item>
-              <p>Year:{car.year}</p>
-            </Item>
-            <Item>
-              <p>Type:{car.type}</p>
-            </Item>
-            <Item>
-              <p>Fuel Consumption:{car.fuelConsumption}</p>
-            </Item>
-            <Item>
-              <p>Engine Size:{car.engineSize}</p>
-            </Item>
+            <Item>{city}</Item>
+            <Item>{country}</Item>
+            <Item>Id:{car.id}</Item>
+            <Item>Year:{car.year}</Item>
+            <Item>Type:{car.type}</Item>
+            <Item>Fuel Consumption:{car.fuelConsumption}</Item>
+            <Item>Engine Size:{car.engineSize}</Item>
           </List>
           <Description>{car.description}</Description>
           <Text>Accessories and functionalities:</Text>
           <Accessories>
-            <Item>
-              <p>{car.accessories[0]}</p>
-            </Item>
-            <Item>
-              <p>{car.accessories[1]}</p>
-            </Item>
-            <Item>
-              <p>{car.accessories[2]}</p>
-            </Item>
+            <Item>{car.accessories[0]}</Item>
+            <Item>{car.accessories[1]}</Item>
+            <Item>{car.accessories[2]}</Item>
           </Accessories>
           <Functionalities>
-            <Item>
-              <p>{car.functionalities[0]}</p>
-            </Item>
-            <Item>
-              <p>{car.functionalities[1]}</p>
-            </Item>
-            <Item>
-              <p>{car.functionalities[2]}</p>
-            </Item>
+            <Item>{car.functionalities[0]}</Item>
+            <Item>{car.functionalities[1]}</Item>
+            <Item>{car.functionalities[2]}</Item>
           </Functionalities>
           <Text>Rental Conditions:</Text>
           <ConditionsWrap>
