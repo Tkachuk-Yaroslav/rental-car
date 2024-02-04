@@ -19,9 +19,7 @@ import {
   Year,
 } from './CarModal.styled';
 
-const CarModal = ({ isOpen, onClose, car, city, country, quality }) => {
-  console.log(car, 'МОДАЛКА');
-
+const CarModal = ({ isOpen, onClose, car, city, country }) => {
   const conditionsArray = car.rentalConditions.split('\n');
 
   const minimumAgeString = conditionsArray[0];

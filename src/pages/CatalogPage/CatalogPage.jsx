@@ -5,11 +5,11 @@ import CatalogList from 'components/CatalogList/CatalogList';
 import CarFilter from 'components/CarFilter/CarFilter';
 import { ColorRing } from 'react-loader-spinner';
 import { CenteredColorRing } from './CatalogPage.styled';
-import { getCars, getIsLoading } from '../../redux/selectors';
+import { getIsLoading } from '../../redux/selectors';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  const cars = useSelector(getCars);
+
   const isLoading = useSelector(getIsLoading);
   const [page, setPage] = useState(1);
   const [filterOptions, setFilterOptions] = useState({
@@ -45,7 +45,6 @@ const CatalogPage = () => {
     dispatch(fetchCars(filterOptions));
   }, [dispatch, filterOptions]);
 
-  console.log(cars, 'масив який буде мапатись');
   return (
     <>
       {isLoading && (
