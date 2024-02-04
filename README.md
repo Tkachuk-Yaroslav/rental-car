@@ -54,7 +54,7 @@ You can view my other projects on
 Щоб використовувати цей проект, необхідно виконати наступні кроки:
 
 1. Клонуйте репозиторій:
-   `git-клон https://github.com/Tkachuk-Yaroslav/rental-car.git`
+   `git-clone https://github.com/Tkachuk-Yaroslav/rental-car.git`
 2. Встановіть залежності: `npm install`
 3. Запустіть проект: `npm start`
 
