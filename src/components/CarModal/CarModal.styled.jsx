@@ -47,13 +47,10 @@ export const FlexWrap = styled.div`
 `;
 
 export const Subtitle = styled.p`
+  font-size: 18px;
+  line-height: 133%;
   color: #121417;
 
-  /* font-family: Manrope; */
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
   overflow: hidden;
   height: 24px;
   text-overflow: ellipsis;
@@ -65,6 +62,7 @@ export const Year = styled.span`
 `;
 
 export const List = styled.ul`
+  font-family: 'ManropeRegular';
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 14px;
@@ -117,7 +115,7 @@ export const Description = styled.p`
 `;
 
 export const Text = styled.div`
-  /* font-family: Manrope; */
+  font-family: 'ManropeMedium';
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -126,6 +124,7 @@ export const Text = styled.div`
 `;
 
 export const Accessories = styled.ul`
+  font-family: 'ManropeRegular';
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 4px;
@@ -135,6 +134,7 @@ export const Accessories = styled.ul`
 `;
 
 export const Functionalities = styled.ul`
+  font-family: 'ManropeRegular';
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 24px;
@@ -151,12 +151,12 @@ export const ConditionsWrap = styled.div`
 `;
 
 export const ConditionsItem = styled.p`
+  font-family: 'MontserratRegular';
   color: #363535;
 
   /* font-family: Montserrat; */
   font-size: 12px;
   font-style: normal;
-  font-weight: 400;
   line-height: 18px; /* 150% */
   letter-spacing: -0.24px;
   padding: 7px 14px;
@@ -166,6 +166,7 @@ export const ConditionsItem = styled.p`
 `;
 
 export const ConditionsSpan = styled.span`
+  font-family: 'MontserratSemiBold';
   color: #3470ff;
   font-weight: 600;
 `;

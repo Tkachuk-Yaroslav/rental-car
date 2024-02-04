@@ -25,6 +25,7 @@ export const FlexWrap = styled.div`
 `;
 
 export const List = styled.ul`
+  font-family: 'ManropeRegular';
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 28px;
@@ -60,7 +61,7 @@ export const BtnMore = styled.button`
   border-radius: 12px;
   background: #3470ff;
   color: #ffffff;
-  /* font-family: Manrope; */
+  font-family: 'ManropeSemiBold';
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -70,7 +71,7 @@ export const BtnMore = styled.button`
 export const Subtitle = styled.p`
   color: #121417;
 
-  /* font-family: Manrope; */
+  font-family: 'ManropeMedium';
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

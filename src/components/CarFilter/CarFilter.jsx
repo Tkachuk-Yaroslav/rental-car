@@ -7,6 +7,7 @@ import {
   DivMillage,
   InputMillage,
   InputMillageWrapper,
+  Label,
   PriceSelect,
   SelectCarWrapper,
   SelectPriceWrapper,
@@ -74,7 +75,7 @@ const CarFilter = ({ resetPage }) => {
   return (
     <CarForm onSubmit={handleSubmit}>
       <SelectCarWrapper>
-        <label htmlFor="makeSelect">Car brand</label>
+        <Label htmlFor="makeSelect">Car brand</Label>
         <StyledSelect
           id="makeSelect"
           value={selectedMake}
@@ -90,7 +91,7 @@ const CarFilter = ({ resetPage }) => {
       </SelectCarWrapper>
 
       <SelectPriceWrapper>
-        <label htmlFor="priceSelect">Price To $/ 1 hour</label>
+        <Label htmlFor="priceSelect">Price To $/ 1 hour</Label>
         <PriceSelect
           id="priceSelect"
           value={selectedPrice}
@@ -106,7 +107,7 @@ const CarFilter = ({ resetPage }) => {
       </SelectPriceWrapper>
 
       <InputMillageWrapper>
-        <label htmlFor="millage">Сar mileage / km</label>
+        <Label htmlFor="millage">Сar mileage / km</Label>
         <DivMillage>
           <InputMillage
             style={{

@@ -22,6 +22,10 @@ export const ListItem = styled.li`
 `;
 
 export const StyledLink = styled(NavLink)`
+  font-family: 'ManropeSemiBold';
+  font-size: 18px;
+  line-height: 143%;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;

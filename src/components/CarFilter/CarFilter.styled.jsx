@@ -6,6 +6,11 @@ export const SelectCarWrapper = styled.div`
 `;
 
 export const StyledSelect = styled.select`
+  font-family: 'ManropeMedium';
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(18, 20, 23, 0.9);
+
   width: 100%;
   height: 48px;
   border-radius: 14px;
@@ -22,6 +27,11 @@ export const StyledSelect = styled.select`
 `;
 
 export const PriceSelect = styled.select`
+  font-family: 'ManropeMedium';
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(18, 20, 23, 0.9);
+
   width: 100%;
 
   height: 48px;
@@ -44,6 +54,11 @@ export const InputMillageWrapper = styled.div`
 `;
 
 export const InputMillage = styled.input`
+  font-family: 'ManropeMedium';
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(18, 20, 23, 0.9);
+
   width: 160px;
   padding: 14px 24px;
 
@@ -79,4 +94,11 @@ export const CarForm = styled.form`
   height: 74px;
 
   margin: 0 auto 50px;
+`;
+
+export const Label = styled.label`
+  font-family: 'ManropeMedium';
+  font-size: 14px;
+  line-height: 129%;
+  color: #8a8a89;
 `;

@@ -6,7 +6,6 @@ export const FooterWrap = styled.footer`
   background-color: #f7f7fb;
   border-radius: 15px;
 
-  font-family: RobotoBold;
   font-size: 24px;
   font-weight: 700;
   line-height: 27.6px;
