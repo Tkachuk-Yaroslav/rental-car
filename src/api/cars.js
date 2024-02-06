@@ -39,10 +39,16 @@ export const getFilterCars = async data => {
         includeCar = false;
       }
       if (
-        data.mileageFrom &&
-        data.mileageTo &&
-        (car.mileage < parseInt(data.mileageFrom.replace(',', ''), 10) ||
-          car.mileage > parseInt(data.mileageTo.replace(',', ''), 10))
+        (data.mileageFrom &&
+          data.mileageTo &&
+          (car.mileage < parseInt(data.mileageFrom.replace(',', ''), 10) ||
+            car.mileage > parseInt(data.mileageTo.replace(',', ''), 10))) ||
+        (!data.mileageFrom &&
+          data.mileageTo &&
+          car.mileage > parseInt(data.mileageTo.replace(',', ''), 10)) ||
+        (data.mileageFrom &&
+          !data.mileageTo &&
+          car.mileage < parseInt(data.mileageFrom.replace(',', ''), 10))
       ) {
         includeCar = false;
       }
